@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Country Smp</h1>
+
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#structure">Media Sosial</a>
+            <a href="#shop">Shop</a>
+            <a href="https://saweria.co/COUNTRYSMP" target="_blank">Donate</a>
+        </nav>
+
+        <div class="jarak" id="jarak">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <h2>Selamat datang, petualang! 🏹</h2>
+        <p>Dunia penuh misteri dan tantangan menantimu.</p>
+        <button class="btn-home" onclick="copyServerIP()">Mainkan Sekarang</button>
+    </section>
+
+    <div class="btn" id="toast">
+      <p>IP berhasil disalin!</p>
+    </div>
+
+    <section class="sectionn" id="about">
+  <h2 class="struktur">ABOUT SERVER</h2>
+
+    <div class="about-container">
+      <div class="about-img">
+        <img src="logo.jpeg" alt="Foto Saya">
+      </div>
+      <div class="about-text">
+        <p>
+          Countrysmp adalah sebuah server yang sudah ada sejak 1/1/23 server ini dibuat oleh seorang Engineer dan seorang Developer, sekarang Countrysmp memasuki New Era
+        </p>
+        <button onclick="openPopup()">Selengkapnya</button>
+
+<div class="popup-con" id="aboutPopup">
+
+  <div class="popup">
+    <h2>CountrySMP</h2>
+
+    <p>
+      CountrySMP adalah server Minecraft bertema Survival Multiplayer (SMP) 
+      dengan sistem Ekonomi + PvP klasik yang dirancang buat kamu yang suka 
+      kompetisi, grinding, dan jadi yang terkuat di antara player lain.
+      <br><br>
+      Di sini kamu bukan cuma bertahan hidup — kamu membangun negara, 
+      memperkuat ekonomi, dan menaklukkan musuh!
+    </p>
+
+    <button onclick="copyIP()">Copy IP</button>
+    <button onclick="closeAboutPopup()">Tutup</button>
+  </div>
+
+</div>
+
+</div>
+      </div>
+    </div>
+</section>
+
+<section class="section-hobi" id="structure">
+    <h2 class="struktur">MEDIA SOCIAL</h2>
+
+<div class="social-container">
+
+  <div class="social-card discord">
+    <i class="fab fa-discord"></i>
+    <h3>Discord</h3>
+    <p>Gabung komunitas server</p>
+    <a href="https://discord.gg/6R6wQ7zbT">Join Sekarang</a>
+  </div>
+
+  <div class="social-card whatsapp">
+    <i class="fab fa-whatsapp"></i>
+    <h3>WhatsApp</h3>
+    <p>Chat & info terbaru</p>
+    <a href="https://chat.whatsapp.com/EQiWKDQ4Avj1FX5shuE7Lh">Gabung Grup</a>
+  </div>
+
+  <div class="social-card tiktok">
+    <i class="fab fa-tiktok"></i>
+    <h3>TikTok</h3>
+    <p>Lihat konten seru</p>
+    <a href="https://www.tiktok.com/@countrysmp.biz.id?_r=1&_t=ZS-94NeQzr02Js">Follow Kami</a>
+  </div>
+
+</div>
+
+</section>
+
+ <div></div>
+<section class="container-shop" id="shop">
+   <h2 class="struktur">SHOP</h2>
+
+   <div class="rank-container">
+
+  <!-- VIP -->
+  <div class="rank-card">
+    <h2>👑 VIP</h2>
+    <p class="price">Rp25.000</p>
+
+    <button onclick="showPopup('VIP')">Lihat Feature</button>
+
+    <a href="https://discord.gg/PSFmYtJv" target="_blank">
+      Buy
+    </a>
+  </div>
+
+  <!-- VIP+ -->
+  <div class="rank-card">
+    <h2>💎 VIP+</h2>
+    <p class="price">Rp50.000</p>
+
+    <button onclick="showPopup('VIPPLUS')">Lihat Feature</button>
+
+    <a href="https://discord.gg/PSFmYtJv" target="_blank">
+      Buy
+    </a>
+  </div>
+
+  <!-- MVP -->
+  <div class="rank-card">
+    <h2>🔥 MVP</h2>
+    <p class="price">Rp80.000</p>
+
+    <button onclick="showPopup('MVP')">Lihat Feature</button>
+
+    <a href="https://discord.gg/PSFmYtJv" target="_blank">
+      Buy
+    </a>
+  </div>
+
+  <!-- MVP+ -->
+  <div class="rank-card">
+    <h2>⚡ MVP+</h2>
+    <p class="price">Rp100.000</p>
+
+    <button onclick="showPopup('MVPPLUS')">Lihat Feature</button>
+
+    <a href="https://discord.gg/PSFmYtJv" target="_blank">
+      Buy
+    </a>
+  </div>
+
+</div>
+</section>
+<div class="popup-rank" id="popup">
+  <div class="popup-content">
+
+    <span class="close-btn" onclick="closeRankPopup()">
+      &times;</span>
+
+    <h2 id="rank-title"></h2>
+    <div id="rank-text"></div>
+
+  </div>
+</div>
+
+<footer>
+  &copy; @countrysmp|New Era
+</footer>
+</body>
+<script>
+/* HEADER SCROLL */
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  header.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+/* HAMBURGER */
+const ham = document.getElementById("jarak");
+const nav = document.getElementById("navMenu");
+
+ham.onclick = () => {
+  nav.classList.toggle("active");
+};
+
+/* ABOUT POPUP */
+function openPopup() {
+  document.getElementById("aboutPopup").style.display = "flex";
+}
+
+function closeAboutPopup() {
+  document.getElementById("aboutPopup").style.display = "none";
+}
+
+/* COPY IP */
+function copyIP() {
+  const ip = "mc.countrysmp.biz.id:25575";
+
+  navigator.clipboard.writeText(ip);
+
+  alert("IP berhasil disalin!");
+}
+
+/* DATA FEATURE */
+const rankDetails = {
+
+  "VIP": `
+    <strong>Feature:</strong><br>
+    ▨ /clan create Command<br>
+    ▨ /repair Command<br>
+    ▨ /food Command<br>
+    ▨ /kit vip<br>
+  `,
+
+  "VIPPLUS": `
+    <strong>Feature:</strong><br>
+    ▨ /ec Command<br>
+    ▨ /nick Command<br>
+    ▨ /repair Command<br>
+    ▨ /feed Command<br>
+    ▨ /kit elite Command<br>
+    ▨ Termasuk fitur MVP<br>
+  `,
+
+  "MVP": `
+    <strong>Feature:</strong><br>
+    ▨ /ec Command<br>
+    ▨ /beezooka Command<br>
+    ▨ /feed Command<br>
+    ▨ /nick Command<br>
+    ▨ /repair Command<br>
+    ▨ /kit sultan Command<br>
+    ▨ Termasuk fitur LEGEND<br>
+  `,
+
+  "MVPPLUS": `
+    <strong>Feature:</strong><br>
+    ▨ /ec Command<br>
+    ▨ /feed Command<br>
+    ▨ /repair Command<br>
+    ▨ /nick Command<br>
+    ▨ /craft Command<br>
+    ▨ /head Command<br>
+    ▨ /beezooka Command<br>
+    ▨ /kit supreme<br>
+    ▨ Termasuk fitur SULTAN<br>
+  `
+};
+
+/* OPEN POPUP */
+function showPopup(rank) {
+
+  document.getElementById("rank-title").innerText = rank;
+
+  document.getElementById("rank-text").innerHTML =
+    rankDetails[rank];
+
+  document.getElementById("popup").style.display = "flex";
+}
+
+/* CLOSE POPUP */
+function closeRankPopup() {
+
+  document.getElementById("popup").style.display = "none";
+}
+
+/* CLICK LUAR */
+window.onclick = function(event) {
+
+  const popup = document.getElementById("popup");
+
+  if (event.target === popup) {
+    closeRankPopup();
+  }
+};
+</script>
+</html>
